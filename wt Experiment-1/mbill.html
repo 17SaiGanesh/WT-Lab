@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie Ticket Bill Generator</title>
+	<script type="text/javascript" src="ticket.js"></script>
+    <style>
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		input {
+			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid #dddddd;
+		}
+
+		button {
+			background-color: #4CAF50;
+			color: white;
+		}
+		body {
+ 		 background-image: url('https://i0.wp.com/www.smartprix.com/bytes/wp-content/uploads/2023/02/movie-ticketing-1024x768-photoutils.com_.jpg?ssl=1&quality=80&w=800');
+ 		 background-repeat: no-repeat;
+  		background-attachment: fixed;
+  		background-size: 100% 100%;
+		}
+
+	</style>
+</head>
+<body bgcolor="powder red">
+	<h1>Movie Ticket Bill Generator</h1>
+	<form id="ticket-form">
+		<label for="ticket-class">Ticket Class:</label>
+		<select id="ticket-class" name="ticket-class">
+			<option value="gold">Gold</option>
+			<option value="premium">Premium</option>
+		</select>
+		<br>
+		<label for="ticket-quantity">Quantity:</label>
+		<input type="number" id="ticket-quantity" name="ticket-quantity" min="1" value="1">
+		<br>
+		<button type="button" onclick="generateBill()">Generate Bill</button>
+	</form>
+	<br>
+	<br>
+	<div id="bill"></div>
+</body>
+</html>

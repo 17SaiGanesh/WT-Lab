@@ -1,0 +1,26 @@
+<html>
+<head>
+<link rel="stylesheet" href="1.css">
+</head>
+<body>
+<h1 id="2" onmouseover="f1()">Welcome to this webpage:</h1>
+<p id="1" >Text is underlined with yellow color</p>
+<div id="3"> Choose Your favourite Game:</div>
+<script>
+function f1()
+{
+document.getElementById("2").style.fontSize = "25px"; 
+document.getElementById("2").style.color = "red";       
+}
+function f2()
+{
+document.getElementById("1").style.fontSize = "25px"; 
+document.getElementById("1").style.color = "Green";
+document.getElementById("1").style.backgroundColor = "yellow";        
+}
+const a=document.querySelector("3");
+//a.addEventlistener("click",f3(){a.style.backgroundColor="pink"});
+</script>
+<button type="button" onclick="f2()">ClickHere</button>
+</body>
+</html>

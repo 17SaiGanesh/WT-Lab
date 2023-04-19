@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #word {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #input {
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #timer {
+    font-size: 2em;
+    text-align: center;
+  }
+  

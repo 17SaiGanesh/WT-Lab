@@ -1,0 +1,62 @@
+<html>
+
+<body>
+<form action="login.php" method="POST">
+    <tr>
+        <th>
+            <label for="name">Name</label>
+        </th>
+        <th>
+            <input type="text" name="name" placeholder="Enter name" size="20">
+        </th>
+    </tr>
+    <br>
+    <tr>
+        <th>
+            <label for="Email">Email</label>
+        </th>
+        <th>
+            <input type="email" name="email" placeholder="Enter your email" size="20">
+        </th>
+    </tr>
+    <br>
+    <tr>
+        <th>
+            <input type="submit" name="submit" value="sumbit">
+        </th>
+    </tr>
+<form>
+</body>
+
+
+<?php
+session_start();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $_POST["name"];
+        $email = $_POST["email"];
+        $host = 'localhost';
+        $username = 'root';
+        $password = '';
+        $dbname = 'aasish';
+
+        $conn = mysqli_connect($host, $username, $password, $dbname);
+
+        if ($conn) {
+            echo "Connection successful.";
+        }
+        else{
+            echo "Connection Failed.";
+            die("Connection Failed:".mysqli_connect_error());
+        }
+        $sql = "select * from student where name='$name' and email='$email'";
+        $res = mysqli_query($conn,$sql);
+        if(mysqli_num_rows($res)>0){
+           $_SESSION['name']=$name;
+           header('Location:dash.php');
+        }
+        else{
+            echo "<script> alert('Invalid Credentials')</script>";
+            header('Location:login.php');
+        }
+}
+?>
